@@ -337,6 +337,8 @@ async def start_bot():
 
         # Setup message redirection handlers AFTER sessions are restored
         from bot.message_handler import message_redirector
+import os
+os.makedirs("logs", exist_ok=True)
         await message_redirector.setup_redirection_handlers()
 
         # Initialize and start keep-alive system
